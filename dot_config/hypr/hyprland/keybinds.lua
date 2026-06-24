@@ -44,37 +44,31 @@ hl.bind("SUPER + P", hl.dsp.exec_cmd("firefox --private-window"))
 
 
 -- management
-local last_ws = {}
 
-function special_ws(app)
-    local ws = app.ws
+hl.window_rule({
+    name = "spotify-music",
+    match = {
+        class = "Spotify"
+    },
+    workspace = "special:music",
+    float = false,
+})
 
-    if last_ws[ws] then
-        hl.dispatch(hl.dsp.workspace.toggle_special(ws))
-        last_ws[ws] = false
-        return
-    end
-
-    hl.dispatch(hl.dsp.exec_cmd(app.cmd))
-    hl.dispatch(hl.dsp.workspace.toggle_special(ws))
-
-    last_ws[ws] = true
-end
-
-hl.bind("SUPER + C", function()
-    special_ws({
-        process = "vesktop",
-        cmd = "vesktop",
-        ws = "special:chat"
-    })
-end)
+hl.window_rule({
+    name = "vesktop-chat",
+    match = {
+        class = "vesktop"
+    },
+    workspace = "special:chat",
+    float = false,
+})
 
 hl.bind("SUPER + M", function()
-    special_ws({
-        process = "spotify",
-        cmd = "spotify",
-        ws = "special:music"
-    })
+    hl.dispatch(hl.dsp.exec_cmd("spotify"))
+end)
+
+hl.bind("SUPER + C", function()
+    hl.dispatch(hl.dsp.exec_cmd("vesktop"))
 end)
 
 
