@@ -2,5 +2,5 @@
 **Required Packages**
 |---|
 | Neovim |
-| Starship |
-| Nushell |
+| Hyprland |
+| Noctalia-shell |
