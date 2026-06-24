@@ -45,31 +45,11 @@ hl.bind("SUPER + P", hl.dsp.exec_cmd("firefox --private-window"))
 
 -- management
 
-hl.window_rule({
-    name = "spotify-music",
-    match = {
-        class = "Spotify"
-    },
-    workspace = "special:music",
-    float = false,
-})
+hl.bind("SUPER + K", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + J", hl.dsp.layout("swapsplit"))
 
-hl.window_rule({
-    name = "vesktop-chat",
-    match = {
-        class = "vesktop"
-    },
-    workspace = "special:chat",
-    float = false,
-})
 
-hl.bind("SUPER + M", function()
-    hl.dispatch(hl.dsp.exec_cmd("spotify"))
-end)
-
-hl.bind("SUPER + C", function()
-    hl.dispatch(hl.dsp.exec_cmd("vesktop"))
-end)
+hl.bind("SUPER + C", hl.dsp.exec_cmd("vesktop"))
 
 
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -78,8 +58,6 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + A", hl.dsp.focus({ monitor = 0 }))
 hl.bind("SUPER + D", hl.dsp.focus({ monitor = 1 }))
 
-hl.bind("SUPER + M",hl.dsp.exec_cmd("~/.config/hypr/hyprland/scripts/toggle.sh music spotify"))
-hl.bind("SUPER + C",hl.dsp.exec_cmd("~/.config/hypr/hyprland/scripts/toggle.sh chat vesktop"))
 hl.bind("SUPER + Q", hl.dsp.window.close())
 hl.bind("SUPER + SHIFT + Q",hl.dsp.exec_cmd("hyprctl kill"))
 

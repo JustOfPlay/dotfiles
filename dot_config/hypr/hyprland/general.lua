@@ -125,6 +125,7 @@ hl.config({
         smart_split = false,
         smart_resizing = false
     },
+    
 })
 
 
