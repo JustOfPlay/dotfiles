@@ -37,8 +37,8 @@ hl.bind("SUPER + D", hl.dsp.focus({ monitor = 1 }))
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("dolphin"))
-hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox"))
-hl.bind("SUPER + P", hl.dsp.exec_cmd("firefox --private-window"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("zen-browser"))
+hl.bind("SUPER + P", hl.dsp.exec_cmd("zen-browser --private-window"))
 
 
 
@@ -82,6 +82,8 @@ for _, d in ipairs(dirs) do
     hl.bind("SUPER + " .. d[1], hl.dsp.focus({ direction = d[2] }))
     hl.bind("SUPER + SHIFT + " .. d[1], hl.dsp.window.move({ direction = d[2] }))
 end
+
+
 
 -- Workspaces (1–10)
 
