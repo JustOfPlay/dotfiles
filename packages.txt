@@ -4,4 +4,4 @@ hyprpicker
 fish
 kitty
 starship
-
+neovim
