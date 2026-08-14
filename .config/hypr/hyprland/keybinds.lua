@@ -39,7 +39,7 @@ hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("zen-browser"))
 hl.bind("SUPER + P", hl.dsp.exec_cmd("zen-browser --private-window"))
-
+hl.bind("SUPER + escape", hl.dsp.exec_cmd("missioncenter"))
 
 
 

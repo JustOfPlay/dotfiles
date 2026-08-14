@@ -4,7 +4,7 @@ hl.monitor({
   output = "DP-1",
   mode="2560x1440@144",
   position = "1920x0",
-  scale = 1
+  scale = 1,
 })
 
 
@@ -12,7 +12,7 @@ hl.monitor({
   output = "HDMI-A-1",
   mode="1920x1080@60",
   position = "0x0",
-  scale = 1
+  scale = 1,
 })
 
 
@@ -63,8 +63,8 @@ hl.config({
         workspace_swipe_create_new = true
     },
     general = {
-        gaps_in = 4,
-        gaps_out = 5,
+        gaps_in = 3,
+        gaps_out = 3,
         gaps_workspaces = 50,
 
         border_size = 1,
