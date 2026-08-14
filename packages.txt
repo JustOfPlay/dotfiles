@@ -1,0 +1,7 @@
+noctalia-shell
+hyprland
+hyprpicker
+fish
+kitty
+starship
+
