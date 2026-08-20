@@ -1,34 +1,92 @@
 require("hyprland.vars")
 
-hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
-hl.bind("SUPER + DELETE", hl.dsp.exec_cmd(ipc .. "sessionMenu toggle"))
-hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd(ipc .. "media toggle"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd(ipc .. "sessionMenu lock"))
-
-hl.bind("SUPER + Y", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
-hl.bind("SUPER + I", hl.dsp.exec_cmd(ipc .. "settings toggle"))
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+hl.bind("SUPER + PERIOD",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle launcher /emo")
+)
 
 
-hl.bind("SUPER + SHIFT + S",hl.dsp.exec_cmd("hyprshot --freeze --clipboard-only --mode region"))
+
+hl.bind("SUPER + DELETE",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle session")
+)
+
+hl.bind("SUPER + SHIFT + M",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle control-center media")
+)
+
+hl.bind("SUPER + L",
+    hl.dsp.exec_cmd("noctalia msg session lock")
+)
+
+hl.bind("SUPER + Y",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle control-center")
+)
+
+hl.bind("SUPER + I",
+    hl.dsp.exec_cmd("noctalia msg settings-toggle")
+)
+
+hl.bind("SUPER + SPACE",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle launcher")
+)
+
+
+hl.bind("SUPER + SHIFT + S",
+    hl.dsp.exec_cmd("noctalia msg screenshot-region")
+)
+
+-- Full screenshot
+hl.bind("PRINT",
+    hl.dsp.exec_cmd("noctalia msg screenshot-fullscreen")
+)
+
+
+-- Window Switcher
+hl.bind("SUPER + TAB",
+    hl.dsp.exec_cmd("noctalia msg window-switcher")
+)
+
 
 hl.bind("SUPER + V",hl.dsp.exec_cmd(
-    "cliphist list | fuzzel --match-mode fzf --dmenu | cliphist decode | wl-copy"
+    "noctalia msg panel-toggle clipboard"
 ))
-
-hl.bind("PRINT",hl.dsp.exec_cmd("grim - | wl-copy"))
-hl.bind("SUPER + TAB",hl.dsp.exec_cmd(ipc .. "launcher windows"))
 
 
 
 -- Audio
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .."volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"), { locked = true })
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
+hl.bind(
+  "XF86AudioRaiseVolume",
+    hl.dsp.exec_cmd("noctalia msg volume-up"),
+    { locked = true, repeating = true }
+)
+
+hl.bind(
+    "XF86AudioLowerVolume",
+    hl.dsp.exec_cmd("noctalia msg volume-down"),
+    { locked = true, repeating = true }
+)
+
+hl.bind(
+    "XF86AudioMute",
+    hl.dsp.exec_cmd("noctalia msg volume-mute"),
+    { locked = true }
+)
+
+
+-- Brightness
+
+hl.bind(
+    "XF86MonBrightnessUp",
+    hl.dsp.exec_cmd("noctalia msg brightness-up"),
+    { locked = true, repeating = true }
+)
+
+hl.bind(
+    "XF86MonBrightnessDown",
+    hl.dsp.exec_cmd("noctalia msg brightness-down"),
+    { locked = true, repeating = true }
+)
 
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
 
