@@ -18,6 +18,10 @@ hl.bind("SUPER + L",
     hl.dsp.exec_cmd("noctalia msg session lock")
 )
 
+hl.bind("SUPER + N",
+    hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications")
+)
+
 hl.bind("SUPER + Y",
     hl.dsp.exec_cmd("noctalia msg panel-toggle control-center")
 )
