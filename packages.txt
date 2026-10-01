@@ -1,4 +1,4 @@
-noctalia-shell
+noctalia
 hyprland
 hyprpicker
 fish
